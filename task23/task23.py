@@ -90,4 +90,10 @@ def task23_iglin_15(x, y):
     if x <= y:
         return x == y
     return task23_iglin_15(x-3, y) + task23_iglin_15(x-2, y) + task23_iglin_15(x // 5, y)
-print(task23_iglin_15(56, 10) * task23_iglin_15(10, 6) * task23_iglin_15(6, 1))
+
+
+def task23_shastin_16(x, y):  # 889
+    if x >= y:
+        return x == y
+    return task23_shastin_16(x+2, y) + task23_shastin_16(x + 3, y) + task23_shastin_16(x * 2, y)
+print(task23_shastin_16(10, 30) * task23_shastin_16(30, 40))

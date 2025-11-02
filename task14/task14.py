@@ -189,4 +189,10 @@ def task14_lashin_19():  # 4
         n //= 30
     print(c)
 
-task14_lashin_19()
+
+def task14_bahtiev_20():  # 27
+    for p in range(15, 37):
+        n = int('DAD', p) + int('ABED', p) == int('BAD', p) + 206698
+        if n:
+            print(p)
+task14_bahtiev_20()

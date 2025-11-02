@@ -131,3 +131,6 @@ def task8_lashin_10():  # 152724
             print(i, n)
         n += 1
     print(s)
+
+
+

@@ -105,4 +105,14 @@ def task16_lashin_12(n):  # 66048
     if n < 10:
         return n + 10
     return task16_lashin_12(n-8) + 2 ** n
-print((task16_lashin_12(4000) + 2 * task16_lashin_12(3992)) / task16_lashin_12(3984))
+
+
+def task16_bahtiev_13_G(n):  # 17937
+    return task16_bahtiev_13_F(n-3)
+
+
+def task16_bahtiev_13_F(n):
+    if n <= 20:
+        return 177
+    return task16_bahtiev_13_G(n-2) + 4
+print(task16_bahtiev_13_G(22222))

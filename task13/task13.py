@@ -68,4 +68,5 @@ def task13_iglin_9():  # 202.71.127.254 -> 20271127254
         x4 = x[24:32]
         if int(int(x1) % 2 != 0) + int(int(x2) % 2 != 0) + int(int(x3) % 2 != 0) + int(int(x4) % 2 != 0) == 2:
             print(i)
-task13_iglin_9()
+
+

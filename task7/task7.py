@@ -115,4 +115,18 @@ def task7_iglin_12():
     d = 5
     comp = 0.75
 
-    print()
+
+def task7_bahtiev_13():  # 2660
+    size = 3072*4096
+    i = 24
+    c = 150
+    membit = size * i * c
+    speedbit = 4 * 1024 * 1024 * 8
+    mem_comp = membit * 0.5
+    t_comp = 0.1 * 150
+
+    print(f'1: {membit / speedbit}')
+    print(f'2: {mem_comp / speedbit + t_comp}')
+    print((membit / speedbit) - (mem_comp / speedbit + t_comp))
+
+task7_bahtiev_13()

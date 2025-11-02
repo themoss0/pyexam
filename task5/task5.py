@@ -156,4 +156,4 @@ def task5_iglin_12():  # 40
         if r >= 300:
             print(n)
             break
-task5_iglin_12()
+

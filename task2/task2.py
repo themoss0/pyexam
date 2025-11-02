@@ -129,4 +129,15 @@ def task2_iglin_12():  # wzyx
                     f = not(y <= (x == w)) and (z <= x)
                     if f:
                         print(w, x, y, z)
-task2_iglin_12()
+
+
+def task2_bahtiev_13():  # xwzy
+    print('w x y z')
+    for w in range(2):
+        for x in range(2):
+            for y in range(2):
+                for z in range(2):
+                    f = (y <= x) and (not(z <= (x == w)))
+                    if f:
+                        print(w, x, y, z)
+task2_bahtiev_13()

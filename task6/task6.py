@@ -176,4 +176,29 @@ def task6_lashin_9():  # 11
             dot(3, 'red')
     tracer()
     done()
-task6_lashin_9()
+
+
+def task6_shastin_10():
+    lt(90)
+    l = 16
+    speed(5000)
+
+    down()
+
+    fd(5*l)
+    rt(60)
+    for _ in range(6):
+        fd(23*l); rt(45); fd(17*l); rt(135)
+    lt(90); fd(7*l)
+
+    up()
+
+    for x in range(0, 40):
+        for y in range(0, 20):
+            goto(x*l, y*l)
+            dot(3, 'red')
+    tracer()
+    done()
+
+task6_shastin_10()
+
