@@ -200,5 +200,28 @@ def task6_shastin_10():
     tracer()
     done()
 
-task6_shastin_10()
+
+def task6_23803_11():  # 3+3+3+3 = 12
+    lt(90)
+    l = 25
+    speed(5000)
+    down()
+
+    for _ in range(2):
+        fd(6 * l); lt(270); back(20 * l); rt(90)
+    up()
+    fd(3 * l); rt(90); back(3 * l); lt(90)
+    down()
+    for _ in range(2):
+        fd(15 * l); rt(90); fd(70 * l); rt(90)
+
+    up()
+
+    for x in range(-20, 20):
+        for y in range(-20, 20):
+            goto(x*l, y*l)
+            dot(3, 'red')
+    tracer()
+    done()
+
 

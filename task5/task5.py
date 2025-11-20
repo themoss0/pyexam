@@ -157,3 +157,29 @@ def task5_iglin_12():  # 40
             print(n)
             break
 
+
+def task5_shastin_13():  # 255
+    for n in range(1, 1001):
+        b = bin(n)[2:]
+        if n % 4 == 0:
+            b = b + b[-2:]
+        else:
+            b = b + bin(n % 4)[2:]
+        r = int(b, 2)
+        if r > 250:
+            print(r)
+            break
+
+
+def task5_23736_14():  # 10
+    res = []
+    for n in range(1, 1001):
+        t = sys(n, 3)
+        if n % 5 == 0:
+            t = t + t[-2:]
+        else:
+            t = t + sys(((n % 5) * 7), 3)
+        r = int(t, 3)
+        if r < 200:
+            res.append(n)
+    print(res, sum(res) / len(res))

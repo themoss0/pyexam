@@ -133,4 +133,11 @@ def task8_lashin_10():  # 152724
     print(s)
 
 
+def task8_23808_11():  # 270297
+    n = 0
+    for i in map(''.join, product(sorted('КОТЕНА'), repeat=7)):
+        n += 1
+        if sorted('КОТЕНОК') == sorted(i) and n % 2 != 0:
+            print(n)
+task8_23808_11()
 

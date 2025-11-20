@@ -129,4 +129,12 @@ def task7_bahtiev_13():  # 2660
     print(f'2: {mem_comp / speedbit + t_comp}')
     print((membit / speedbit) - (mem_comp / speedbit + t_comp))
 
-task7_bahtiev_13()
+
+def task7_23804_14():  # 27.962026......... => 28
+    t_sec = 3 * 3600
+    ch = 2
+    d = 60_000
+    i = 10
+    speedMb = 4
+    speedBit = speedMb * 1024 * 1024 * 8
+    print((t_sec * d * ch * i), (speedBit * t_sec) / (t_sec * d * ch * i))

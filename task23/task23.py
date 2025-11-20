@@ -96,4 +96,11 @@ def task23_shastin_16(x, y):  # 889
     if x >= y:
         return x == y
     return task23_shastin_16(x+2, y) + task23_shastin_16(x + 3, y) + task23_shastin_16(x * 2, y)
-print(task23_shastin_16(10, 30) * task23_shastin_16(30, 40))
+
+
+def task23_24199_17(x, y):  # 86
+    if x <= y or x % 6 == 0:
+        return x == y
+    return task23_24199_17(x-1, y) + task23_24199_17(x // 3, y) + task23_24199_17(x // 4, y)
+
+print(task23_24199_17(100, 33) * task23_24199_17(33, 1))

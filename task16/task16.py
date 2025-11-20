@@ -115,4 +115,13 @@ def task16_bahtiev_13_F(n):
     if n <= 20:
         return 177
     return task16_bahtiev_13_G(n-2) + 4
-print(task16_bahtiev_13_G(22222))
+
+
+def task16_24081_14_F(n):
+    return task16_24081_14_G(n - 50000) + task16_24081_14_G(n + 50000)
+
+def task16_24081_14_G(n):  #152076
+    if n <= 6:
+        return 5 ** n
+    return task16_24081_14_G(n-3) + 2
+print(task16_24081_14_F(100000))

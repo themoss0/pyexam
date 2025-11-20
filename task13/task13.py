@@ -70,3 +70,23 @@ def task13_iglin_9():  # 202.71.127.254 -> 20271127254
             print(i)
 
 
+def task13_24047_10():
+    for i in ip_network('23.78.143.87/255.255.240.0', 0):
+        b = bin(int(i))[2:]
+        b1 = b[0:8]
+        b2 = b[8:16]
+        b3 = b[16:24]
+        b4 = b[24:32]
+        r = [b1, b2, b3, b4]
+        res = []
+        for i in r:
+            for s in i:
+                c = 0
+                if s != 1:
+                    c += 1
+                else:
+                    res.append(c)
+        if sum(res) > 6:
+            print(i)
+            break
+task13_24047_10()
