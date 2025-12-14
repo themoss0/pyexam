@@ -225,3 +225,26 @@ def task6_23803_11():  # 3+3+3+3 = 12
     done()
 
 
+def task6_24854_11():
+    l = 11
+    lt(90)
+    speed(5000)
+
+    for _ in range(4):
+        fd(20*l); rt(90); fd(120*l); rt(90)
+    up()
+    fd(12*l); rt(90); fd(3*l); lt(90)
+    down()
+    for _ in range(3):
+        fd(25*l); rt(90); fd(23*l); rt(90)
+
+    up()
+
+    for x in range(0, 30):
+        for y in range(0, 30):
+            goto(x*l, y*l)
+            dot(3, 'red')
+    tracer()
+    done()
+
+task6_24854_11()

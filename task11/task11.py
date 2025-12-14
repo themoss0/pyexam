@@ -102,3 +102,13 @@ def task11_24072_10():  # 53818
             break
 
 
+def task11_24858_11():
+    l = 150
+    c = 50_000
+    mem = 12 * 1024 * 1024 * 8
+
+    for i in range(1, 40):
+        if mem / 8 >= (l * i * c) / 8:
+            print(i, mem / 8 >= (l * i * c) / 8)
+            print(2 ** i + 1)
+task11_24858_11()

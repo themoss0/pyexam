@@ -148,4 +148,4 @@ def task15_iglin_15():
     for A in range(1, 100000):
         if all(task15_iglin_15_f(A, x) for x in range(1, 1000)):
             print(A)
-task15_iglin_15()
+print(False and False)

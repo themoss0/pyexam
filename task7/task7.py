@@ -138,3 +138,15 @@ def task7_23804_14():  # 27.962026......... => 28
     speedMb = 4
     speedBit = speedMb * 1024 * 1024 * 8
     print((t_sec * d * ch * i), (speedBit * t_sec) / (t_sec * d * ch * i))
+
+
+def task7_24855_15():  # 17
+    size = 1920 * 1080
+    i = 8 + 1
+    c = 80
+    comp = 0.6
+    speedbit = 50_000_000
+    mem = size * i * c
+    mem_res = mem*comp
+    print(mem_res / speedbit)
+task7_24855_15()

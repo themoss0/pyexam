@@ -103,4 +103,9 @@ def task23_24199_17(x, y):  # 86
         return x == y
     return task23_24199_17(x-1, y) + task23_24199_17(x // 3, y) + task23_24199_17(x // 4, y)
 
-print(task23_24199_17(100, 33) * task23_24199_17(33, 1))
+
+def task23_24867_18(x, y):
+    if x <= y or x == 20:
+        return x == y
+    return task23_24867_18(x+1, y) + task23_24867_18(x+5, y) + task23_24867_18(x*5, y)
+print(task23_24867_18(1, 10)  * task23_24867_18(20, 30))

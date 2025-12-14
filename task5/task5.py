@@ -183,3 +183,18 @@ def task5_23736_14():  # 10
         if r < 200:
             res.append(n)
     print(res, sum(res) / len(res))
+
+
+def task5_24853_15():  # 2028
+    res = []
+    for n in range(1, 1000):
+        d = sys(n, 12)
+        if n % 4 == 0:
+            d = 'A' + d + 'B'
+        else:
+            d = '1' + d + '0'
+        r = int(d, 12)
+        if r > 2025:
+            res.append(r)
+    print(min(res))
+task5_24853_15()

@@ -124,4 +124,11 @@ def task16_24081_14_G(n):  #152076
     if n <= 6:
         return 5 ** n
     return task16_24081_14_G(n-3) + 2
-print(task16_24081_14_F(100000))
+
+
+def task16_24863_G(n):  # 3580143520
+    if n < 25:
+        return n
+    return (n-5) * task16_24863_G(n-6)
+
+print((task16_24863_G(60000) - 315 * task16_24863_G(59994)) / (task16_24863_G(59988)))

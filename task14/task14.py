@@ -195,4 +195,59 @@ def task14_bahtiev_20():  # 27
         n = int('DAD', p) + int('ABED', p) == int('BAD', p) + 206698
         if n:
             print(p)
-task14_bahtiev_20()
+
+
+def task14_24861_21():  # БРЕД
+    s = '0123456789ABCDEFGHIJKLMNOPQRSTUV'
+    for x in range(16, 22):
+        for y in s[:x]:
+            n = int(f'13F1{y}', x) + int(f'15{x}5{y}', 21)
+            if n % 32 == 0:
+                print(x, y, int(n // 32))
+    print(int(f'13F120', 16) + int(f'1516520', 21))
+
+
+def task14_25353_22():  # 27
+    for x in range(27, 27001):
+        n = 3 * 27 ** 9 + 2 * 27 ** 6 + 27 ** 3 - x
+        n27 = sys(n, 27)
+        if (n27.count('0') == 6):
+            print(n, n27, x)
+            break
+
+
+def task14_24890_23():  # 31
+    for x in range(1, 7291):
+        n = 27 ** 298 + 27 ** 269 - x
+        k0 = 0
+        while n > 0:
+            if (n % 27 == 0): k0 += 1
+            n //= 27
+        print(k0)
+
+
+def task14_24629_24():  # 8
+    n = 14 ** 1402 + 28 ** 501 - 14 ** 51 - 1400
+    n14 = sys(n, 14)
+    k0 = 0
+    while n > 0:
+        if (n % 14 == int('C', 14)):
+            k0 += 1
+            print(f"Считаю: {n=}, {k0=}")
+        n //= 14
+    print(k0)
+
+
+def task14_24534_25():  # 9604
+    r = []
+    for x in range(1, 11501):
+        k0 = 0
+        n = 7 ** 270 + 7 ** 170 + 7 ** 70 - x
+        while n > 0:
+            if (n % 7  == 0): k0 += 1
+            n //= 7
+        r.append(k0)
+    for i, e in enumerate(r):
+        if e == max(r):
+            print(i+1)
+task14_24534_25()

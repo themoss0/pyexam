@@ -139,5 +139,16 @@ def task8_23808_11():  # 270297
         n += 1
         if sorted('КОТЕНОК') == sorted(i) and n % 2 != 0:
             print(n)
-task8_23808_11()
 
+
+def task8_24856_12():
+    n = 1
+    for i in map(''.join, product('РПОГА', repeat=5)):
+        f1 = i[0] != 'Р'
+        f2 = i.count('Г') == 2 and (not 'ГГ' in i)
+        f3 = i.count('А') == 0 and i.count('О') == 0
+        if f1 and f2 and f3:
+            print(n, i)
+            break
+        n += 1
+task8_24856_12()

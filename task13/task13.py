@@ -89,4 +89,9 @@ def task13_24047_10():
         if sum(res) > 6:
             print(i)
             break
-task13_24047_10()
+
+
+def task13_24860_11():  # 1724515254
+    for i in ip_network('172.45.12.200/255.255.240.0', 0):
+        print(i)
+task13_24860_11()

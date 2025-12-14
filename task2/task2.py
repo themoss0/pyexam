@@ -227,3 +227,21 @@ def task2_23725_18():  # o e m w
             for p in permutations('meow', r=4):
                 if all(task2_lashin_18_f(**dict(zip(p, line))) == line[-1] for line in t):
                     print(*p)
+
+
+def task2_24851_19_f(w, x, y, z):
+    return (not(y <= (z == x))) and (w <= z)
+
+
+def task2_24851_19():  # ywzx
+    for x1, x2, x3, x4, x5, x6 in product([0, 1], repeat=6):
+        t = (
+            (x1, 0, 0, x2, 1),
+            (x3, 0, 1, 0, 1),
+            (x4, x5, x6, 0, 1)
+        )
+        if len(t) == len(set(t)):
+            for p in permutations('wxyz', r=4):
+                if all(task2_24851_19_f(**dict(zip(p, line))) == line[-1] for line in t):
+                    print(p)
+task2_24851_19()
