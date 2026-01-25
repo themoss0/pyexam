@@ -127,6 +127,8 @@ def anti_centroid(cluster):
 		sm = sum(dist(point, p1) for p1 in cluster)
 		m.append([sm, point])
 	return max(m)[-1]
+	
+anti_centroids = [anti_centroid(cluster) for cluster in clusters]
  ```
 
  `Нахождение максимального расстояния между антицентром кластера и точками:`
