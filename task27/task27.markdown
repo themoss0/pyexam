@@ -171,3 +171,12 @@ distances = [medium_distance(cluster) for cluster in clusters]
 Smin = min(distances) * 100000 // 1
 Smax = max(distances) * 100000 // 1
 ```
+
+`Нахождение расстояния между центроидами кластеров:`
+```
+def max_distance_between_centroids():
+	return max(dist(centroids[i], centroids[j]) for i in range(len(centroids)-1) for j in range(i+1, len(centroids)))
+
+def min_distance_between_centroids():
+	return min(dist(centroids[i], centroids[j]) for i in range(len(centroids)-1) for j in range(i+1, len(centroids)))
+```
