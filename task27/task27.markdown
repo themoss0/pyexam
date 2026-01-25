@@ -93,8 +93,8 @@ def find_max_distance_between_centroid_and_any_point(clusters):
 	cl3 = max([dist(centroid(clusters[-1]), point) for point in clusters[-1]])
 	return max(max(cl1, cl2), cl3)
 
-Q1 = int(dist(minn, maxx) * 10000)
-Q2 = int(find_max_distance_between_centroid_and_any_point(clusters) * 10000)
+Q1 = dist(minn, maxx) * 10000 // 1 
+Q2 = find_max_distance_between_centroid_and_any_point(clusters) * 10000 // 1
  ```	
 
  Вывод:
@@ -156,7 +156,7 @@ Px = sum(x for x, y in diagonals) / len(diagonals) * 10000 // 1
 Py = sum(y for x, y in diagonals) / len(diagonals) * 10000 // 1
  ```
 
- `Среднее расстояние` - среднее арифметическое расстояние между всеми парами РАЗЛИЧНЫХ точек в кластере -> сначала нахожим все расстояния, потом определяем среднее арифметическое
+ `Среднее расстояние` - среднее арифметическое расстояние между всеми парами РАЗЛИЧНЫХ точек в кластере -> сначала находим все расстояния, потом определяем среднее арифметическое
  ```
 def medium_distance(cluster):
 	dists = []
