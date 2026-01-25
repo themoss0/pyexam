@@ -108,7 +108,7 @@ print(Px, Py, Q1, Q2)
  clusters = [cl for cl in clusters if len(cl) > 1]
  ````
 
- ### Прототипы задания А: 
+ ### Прототипы заданий А и Б: 
  `Расстояние между центрами кластеров:`
  ```
 ct0x = [centroids[0][0]]
@@ -118,3 +118,54 @@ ct1y = [centroids[1][1]]
 Px = int(abs(dist(ct0x, ct1x)) * 10000)
 Py = int(abs(dist(ct0y, ct1y)) * 10000)
  ```
+
+`Антицентр класстера:` - точка, имеющая максимальную сумму расстояний между остальными точками
+ ```
+def anti_centroid(cluster):
+	m = []
+	for point in cluster:
+		sm = sum(dist(point, p1) for p1 in cluster)
+		m.append([sm, point])
+	return max(m)[-1]
+ ```
+
+ `Нахождение максимального расстояния между антицентром кластера и точками:`
+ ```
+def max_dist(cluster, anti_centroid):
+	return max(dist(anti_centroid, p1) for p1 in cluster)
+
+md0 = max_dist(clusters[0], anti_centroids[0])
+md1 = max_dist(clusters[1], anti_centroids[1])
+md2 = max_dist(clusters[2], anti_centroids[2])
+Q2 = max(md0, md1, md2) * 10000 // 1
+ ```
+
+`Диагональ кластера:`- такой отрезок, что образующие его точки максимально отдалены друг от друга(Максимальное расстояние между двумя точками кластера)
+ ```
+ Нас интересуют конкретно эти две точки, поэтому берём срез [1:]
+ def diagonal(cluster):
+	m = []
+	for p1 in cluster:
+		for p2 in cluster:
+			m.append([dist(p1, p2), p1, p2])
+	return max(m)[1:]
+
+diagonals = []
+for cl in clusters: diagonals.extend(diagonal(cl))
+Px = sum(x for x, y in diagonals) / len(diagonals) * 10000 // 1
+Py = sum(y for x, y in diagonals) / len(diagonals) * 10000 // 1
+ ```
+
+ `Среднее расстояние` - среднее арифметическое расстояние между всеми парами РАЗЛИЧНЫХ точек в кластере -> сначала нахожим все расстояния, потом определяем среднее арифметическое
+ ```
+def medium_distance(cluster):
+	dists = []
+	for i in range(len(cluster) -1):
+		for j in range(i+1, len(cluster)):
+			dists.append(dist(cluster[i], cluster[j]))
+	return sum(dists) / len(dists)
+
+distances = [medium_distance(cluster) for cluster in clusters]
+Smin = min(distances) * 100000 // 1
+Smax = max(distances) * 100000 // 1
+```
