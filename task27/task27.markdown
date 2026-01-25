@@ -30,7 +30,7 @@ data: list(list) = []
 
 # Присвоение x и y в переменных, используя генератор, разделяющий строку по пробелам 
 for line in fileA:
-	data_x, data_y = [float(k) for k in line.split()]
+	data_x, data_y = [float(k) for k in line.replace(',','.').split()]
 	data.append([data_x, data_y])
 print(len(data)) # Выводим общее количество точек
  ```
@@ -107,3 +107,14 @@ print(Px, Py, Q1, Q2)
  ```
  clusters = [cl for cl in clusters if len(cl) > 1]
  ````
+
+ ### Прототипы задания А: 
+ `Расстояние между центрами кластеров:`
+ ```
+ct0x = [centroids[0][0]]
+ct1x = [centroids[1][0]]
+ct0y = [centroids[0][1]]
+ct1y = [centroids[1][1]]
+Px = int(abs(dist(ct0x, ct1x)) * 10000)
+Py = int(abs(dist(ct0y, ct1y)) * 10000)
+ ```
