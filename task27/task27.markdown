@@ -75,8 +75,8 @@ def centroid(cluster):
  `Логика для части A`(Нахождение мин. абсциссы/ординаты):
  ```
  centroids = [centroid(cluster) for cluster in clusters]
- Px = int(abs(min([x for x, y in centroids])) * 10000)
- Py = int(abs(min([y for x, y in centroids])) * 10000)
+ Px = abs(min([x for x, y in centroids])) * 10000 // 1
+ Py = abs(min([y for x, y in centroids])) * 10000 // 1
  ```
 
  `Логика для части Б`(Q1​ - расстояние между центрами кластеров с минимальным и максимальным количеством точек, и Q2​ - максимальное расстояние от центра кластера до точки этого же кластера среди всех кластеров):
