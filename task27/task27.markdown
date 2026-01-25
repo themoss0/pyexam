@@ -72,7 +72,7 @@ def centroid(cluster):
 # ===============================
  ```
 
- `Логика для части A(Нахождение мин. абсциссы/ординаты):`
+ `Логика для части A`(Нахождение мин. абсциссы/ординаты):
  ```
  centroids = [centroid(cluster) for cluster in clusters]
  Px = int(abs(min([x for x, y in centroids])) * 10000)
