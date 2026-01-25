@@ -19,7 +19,7 @@
  ## Код(Общий вид):
  `Открытие файлов и базовое присваивание:`
  ```
- # Открытие файла и 'холостой' проход 1 строчки(не нужна!)
+ # Открытие файла и 'холостой' проход 1 строчки(ВАЖНО: если у вас в файлах есть строчка 'x     y', тогда .readline() у файлов обязателен, иначе - НЕ ИСПОЛЬЗОВАТЬ .readline())
 fileA = open('27_A_21720.txt')
 fileB = open(27_B_21720.txt)
 fileA.readline()
@@ -127,7 +127,7 @@ def anti_centroid(cluster):
 		sm = sum(dist(point, p1) for p1 in cluster)
 		m.append([sm, point])
 	return max(m)[-1]
-	
+
 anti_centroids = [anti_centroid(cluster) for cluster in clusters]
  ```
 
