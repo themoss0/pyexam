@@ -29,9 +29,10 @@ fileB.readline()
 data: list(list) = []
 
 # Присвоение x и y в переменных, используя генератор, разделяющий строку по пробелам 
-for line in file:
+for line in fileA:
 	data_x, data_y = [float(k) for k in line.split()]
 	data.append([data_x, data_y])
+print(len(data)) # Выводим общее количество точек
  ```
 
  Алгоритм кластеризации:
@@ -78,12 +79,12 @@ def centroid(cluster):
  Py = int(abs(min([y for x, y in centroids])) * 10000)
  ```
 
- Логика для части Б(Q1​ - расстояние между центрами кластеров с минимальным и максимальным количеством точек, и Q2Q2​ - максимальное расстояние от центра кластера до точки этого же кластера среди всех кластеров):
+ Логика для части Б(Q1​ - расстояние между центрами кластеров с минимальным и максимальным количеством точек, и Q2​ - максимальное расстояние от центра кластера до точки этого же кластера среди всех кластеров):
  ```
  def find_centroid_cluster_with_max_points(clusters):
 	return centroid(clusters[0]) # тут вручную указываем индекс кластера с максимальной длиной 
 	
-def find_centroid_cluster_with_min_points(clusters):
+def find_centroid_cluster_with_min_points(clusters): # подразумевается, что дано 3 кластера. Если больше/меньше, дополняем/убираем
 	return centroid(clusters[1]) # тут вручную указываем индекс кластера с минимальной длиной
 
 def find_max_distance_between_centroid_and_any_point(clusters):
@@ -100,3 +101,9 @@ Q2 = int(find_max_distance_between_centroid_and_any_point(clusters) * 10000)
  ```
 print(Px, Py, Q1, Q2)
  ```
+
+ ### Аномалии:
+ Иногда бывает, что в задачах упоминаются аномалии - точки, которые не относятся ни к одному из кластеров. Чтобы их убрать, после `алгоритма кластеризации` вне цикла требуется написать: 
+ ```
+ clusters = [cl for cl in clusters if len(cl) > 1]
+ ````
