@@ -151,4 +151,16 @@ def task8_24856_12():
             print(n, i)
             break
         n += 1
-task8_24856_12()
+
+
+def task8_25347_13():  # 23589
+    n = 1
+    for i in map(''.join, product(sorted('ГРАНИТ'), repeat=6)):
+        f1 = i[0] != 'А' and i[0] != 'И' and i[0] != 'Г'
+        f2 = i.count('А') == 1
+        f3 = n % 2 != 0
+        if f1 and f2 and f3:
+            print(n, i)
+            break
+        n += 1
+task8_25347_13()

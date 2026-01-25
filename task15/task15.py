@@ -148,4 +148,15 @@ def task15_iglin_15():
     for A in range(1, 100000):
         if all(task15_iglin_15_f(A, x) for x in range(1, 1000)):
             print(A)
-print(False and False)
+
+
+def task15_egkr_16_F(a, x,y):
+    return (78125 != y + 4*x) or (a > x) and (a > y)
+
+
+def task15_egkr_16():
+    for a in range(0,100000):
+        if all(task15_egkr_16_F(a, x,78125 - 4 * x) for x in range(1,1000) for y in range(1,1000)):
+            print(a)
+            break
+task15_egkr_16()

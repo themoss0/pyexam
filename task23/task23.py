@@ -108,4 +108,10 @@ def task23_24867_18(x, y):
     if x <= y or x == 20:
         return x == y
     return task23_24867_18(x+1, y) + task23_24867_18(x+5, y) + task23_24867_18(x*5, y)
-print(task23_24867_18(1, 10)  * task23_24867_18(20, 30))
+
+
+def task23_25360_19(x, y):
+    if x <= y or x == 36:
+        return x == y
+    return task23_25360_19(x-3, y) + task23_25360_19(x-6, y) + task23_25360_19(x//2, y)
+print(task23_25360_19(86, 53) * task23_25360_19(53, 12))

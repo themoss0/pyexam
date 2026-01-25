@@ -149,4 +149,11 @@ def task7_24855_15():  # 17
     mem = size * i * c
     mem_res = mem*comp
     print(mem_res / speedbit)
-task7_24855_15()
+
+
+def task7_25346_16():  # 656
+    size = 1024 * 960
+    i = 14
+    c = 400
+    mem = size * i * c
+    print(mem / 8 / 1024 / 1024)

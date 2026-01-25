@@ -247,4 +247,26 @@ def task6_24854_11():
     tracer()
     done()
 
-task6_24854_11()
+
+def task6_25345_12():  # 230
+    lt(90)
+    l = 13
+    speed(5000.0)
+
+    for _ in range(6):
+        fd(33*l); rt(90); fd(20*l); rt(90)
+    up()
+    fd(3*l); rt(90); fd(9*l); lt(90)
+    down()
+    for _ in range(6):
+        fd(24*l); rt(90); fd(25*l); rt(90)
+    up()
+
+    for x in range(0, 50):
+        for y in range(0, 30):
+            goto(x*l, y*l)
+            dot(3, 'red')
+    tracer()
+    done()
+
+task6_25345_12()

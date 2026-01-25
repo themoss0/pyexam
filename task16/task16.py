@@ -131,4 +131,17 @@ def task16_24863_G(n):  # 3580143520
         return n
     return (n-5) * task16_24863_G(n-6)
 
-print((task16_24863_G(60000) - 315 * task16_24863_G(59994)) / (task16_24863_G(59988)))
+
+def task16_25355_15_F(n):  # 47
+    if n >= 19:
+        return task16_25355_15_F(n-4) + 3580
+    if n < 19:
+        return 6 * (task16_25355_15_G(n-7) - 36)
+
+def task16_25355_15_G(n):
+    if n >= 248045:
+        return n / 20 + 28
+    if n < 248045:
+        return task16_25355_15_G(n+9) - 4
+
+print(task16_25355_15_F(673))

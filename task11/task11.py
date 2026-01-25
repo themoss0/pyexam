@@ -111,4 +111,13 @@ def task11_24858_11():
         if mem / 8 >= (l * i * c) / 8:
             print(i, mem / 8 >= (l * i * c) / 8)
             print(2 ** i + 1)
-task11_24858_11()
+
+
+def task11_25350_12():  # 257
+    l = 105
+    c = 65_536
+    mem = 7 * 1024 * 1024 * 8
+    for i in range(0, 30):
+        if (l * i * c) / 8  <= mem / 8:
+            print(i, 2**i+1)
+task11_25350_12()

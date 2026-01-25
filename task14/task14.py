@@ -250,4 +250,16 @@ def task14_24534_25():  # 9604
     for i, e in enumerate(r):
         if e == max(r):
             print(i+1)
-task14_24534_25()
+
+
+def task14_25353_26():  # 27
+    for x in range(1, 27001):
+        k0 = 0
+        n = 3 * 27 ** 9 + 2 * 27 ** 6 + 27 ** 3 - x
+        while n > 0:
+            if (n % 27 == 0): k0 += 1
+            n //= 27
+        if (k0 == 6):
+            print(x)
+            break
+task14_25353_26()

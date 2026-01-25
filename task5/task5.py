@@ -197,4 +197,18 @@ def task5_24853_15():  # 2028
         if r > 2025:
             res.append(r)
     print(min(res))
-task5_24853_15()
+
+
+def task5_25344_16():  # 243
+    for n in range(1, 1000):
+        t = sys(n, 3)
+        if (n % 3 == 0):
+            t = t + t[-2:]
+        else:
+            tds = sys((sum([int(x) for x in t])) * 3, 3)
+            t = t + tds
+        r = int(t, 3)
+        if r % 2 != 0 and r > 208:
+            print(r, n)
+            break
+task5_25344_16()
