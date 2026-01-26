@@ -107,7 +107,7 @@ print(Px, Py, Q1, Q2)
  ```
  clusters = [cl for cl in clusters if len(cl) > 1]
  ````
-
+ (Хотя, на самом деле, лучше это просто взять за привычку и писать после, потому как иногда это забывается)
  ### Прототипы заданий А и Б: 
  `Расстояние между центрами кластеров:`
  ```
@@ -179,4 +179,17 @@ def max_distance_between_centroids():
 
 def min_distance_between_centroids():
 	return min(dist(centroids[i], centroids[j]) for i in range(len(centroids)-1) for j in range(i+1, len(centroids)))
+```
+
+`Минимальное/максимальное асстояние между центром одного кластера и точкой другого:`
+1. Образуем массив расстояний от центроида одного кластера до всех точек другого, возвращаем список
+2. Отбираем значения min и max, используя различные кластеры и центроиды 
+```
+def distance_between_centroid_and_any_point(other_cluster, centroid):
+	return [dist(centroid, p1) for p1 in other_cluster]
+
+cl0cr1_min = min(distance_between_centroid_and_any_point(clusters[0], centroids[1]))
+cl1cr0_min = min(distance_between_centroid_and_any_point(clusters[1], centroids[0]))
+cl0cr1_max = max(distance_between_centroid_and_any_point(clusters[0], centroids[1]))
+cl1cr0_max = max(distance_between_centroid_and_any_point(clusters[1], centroids[0]))
 ```
