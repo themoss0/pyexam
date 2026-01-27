@@ -70,6 +70,17 @@ def centroid(cluster):
 	# Особенность python: min() сработает по левому элементу
 	return min(m)[-1] 
 # ===============================
+
+ # === НАХОЖДЕНИЕ ЦЕНТРОИДА: Альтернатива ===
+def centroid(claster):
+    sum_x = sum_y = 0
+    for x, y in claster:
+        sum_x += x
+        sum_y += y
+    average_x = sum_x / len(claster)
+    average_y = sum_y / len(claster)
+    return [average_x, average_y]
+# ===============================
  ```
 
  `Логика для части A`(Нахождение мин. абсциссы/ординаты):
