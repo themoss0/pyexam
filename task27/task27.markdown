@@ -193,7 +193,7 @@ def min_distance_between_centroids():
 	return min(dist(centroids[i], centroids[j]) for i in range(len(centroids)-1) for j in range(i+1, len(centroids)))
 ```
 
-`Минимальное/максимальное асстояние между центром одного кластера и точкой другого:`
+`Минимальное/максимальное расстояние между центром одного кластера и точкой другого:`
 1. Образуем массив расстояний от центроида одного кластера до всех точек другого, возвращаем список
 2. Отбираем значения min и max, используя различные кластеры и центроиды 
 ```
@@ -204,4 +204,12 @@ cl0cr1_min = min(distance_between_centroid_and_any_point(clusters[0], centroids[
 cl1cr0_min = min(distance_between_centroid_and_any_point(clusters[1], centroids[0]))
 cl0cr1_max = max(distance_between_centroid_and_any_point(clusters[0], centroids[1]))
 cl1cr0_max = max(distance_between_centroid_and_any_point(clusters[1], centroids[0]))
+```
+
+`В кластере с наибольшим кол-вом точек число таких точек, которые находятся на некотором расстоянии от центра кластера. Определяем наш кластер (здесь - 0, наш центроид кластера (тоже 0), затем берем длину списка таких точек, которые находятся на расстоянии x (в нашем случае - 1.2 и 0.75))`
+
+```
+Q1 = len([p1 for p1 in clusters[0] if dist(centroids[0], p1) <= 1.2])
+Q2 = len([p1 for p1 in clusters[0] if dist(centroids[0], p1) <= 0.75])
+print(Q1, Q2)
 ```
