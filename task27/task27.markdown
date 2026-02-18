@@ -183,6 +183,16 @@ distances = [medium_distance(cluster) for cluster in clusters]
 Smin = min(distances) * 100000 // 1
 Smax = max(distances) * 100000 // 1
 ```
+`Среднее арифметическое расстояний от центра кластера до остальных точек этого же кластера`
+```
+def medium_dist_between_centroids(cluster, centr):
+    c = centr
+    sm = sum(dist(c, p1) for p1 in cluster if p1 != c)
+    return sm / (len(cluster)-1)
+Q1 = abs(medium_dist_between_centroids(clusters[2], centroids[2])) * 10000 // 1
+Q2 = abs(medium_dist_between_centroids(clusters[0], centroids[0])) * 10000 // 1
+```
+
 
 `Нахождение расстояния между центроидами кластеров:`
 ```
