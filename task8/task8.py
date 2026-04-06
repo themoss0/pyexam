@@ -1,4 +1,4 @@
-from itertools import product
+from itertools import product, permutations
 
 
 # this is my practise file of task number 8
@@ -163,4 +163,13 @@ def task8_25347_13():  # 23589
             print(n, i)
             break
         n += 1
-task8_25347_13()
+
+
+def task8_4538_14():  # 12600
+    res = []
+    for i in map(''.join, permutations('СПОРТЛОТО')):
+        if (i[0] != 'О' and i[-1] != 'О'):
+            res.append(i)
+    res = set(res)
+    print(len(res))
+task8_4538_14()

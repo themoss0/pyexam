@@ -261,4 +261,37 @@ def task2_25341_20():  # ('z', 'w', 'x', 'y')
             for p in permutations('wxyz', r=4):
                 if all(task2_25341_20_f(**dict(zip(p, line))) == line[-1] for line in t):
                     print(p)
-task2_25341_20()
+
+
+def task2_20567_21_f(w, x, y, z):
+    return y and (z == (w <= (x or z)))
+
+def task2_20567_21():
+    for x1, x2, x3, x4, x5 in product([0,1], repeat=5):
+        t = (
+            (x1, 0, x2, 0, 1),
+            (x3, x4, 0, 1, 1),
+            (1, x5, 0, 1, 1)
+        )
+        if len(t) == len(set(t)):
+            for p in permutations('wxyz', r=4):
+                if all(task2_20567_21_f(**dict(zip(p, line))) == line[-1] for line in t):
+                    print(p, sep='')
+
+
+def task2_20569_22_f(w, x, y, z):
+    return ((w <= z) == (x <= y)) and (x or z)
+
+
+def task2_20569_22():  # ('z', 'x', 'w', 'y')
+    for x1, x2 in product([0, 1], repeat=2):
+        t = (
+            (1, 0, 0, 1, 1),
+            (1, 1, 1, 0, 0),
+            (0, x1, 0, x2, 1)
+        )
+        if len(t) == len(set(t)):
+            for p in permutations('wxyz', r=4):
+                if all(task2_20569_22_f(**dict(zip(p, line))) == line[-1] for line in t):
+                    print(p, sep='')
+task2_20569_22()

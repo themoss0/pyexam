@@ -269,4 +269,21 @@ def task6_25345_12():  # 230
     tracer()
     done()
 
-task6_25345_12()
+
+def task6_4810_13():
+    speed(5000)
+    tracer(0)
+    q = 15
+    for _ in range(8):
+        for _ in range(4):
+            fd(5*q), rt(30), fd(6*q), rt(150)
+        rt(60)
+
+    up()    
+    for x in range(-10, 12):
+        for y in range(-10, 12):
+            goto(x*q, y*q)
+            dot(3, 'red')
+    done()
+    
+task6_4810_13()

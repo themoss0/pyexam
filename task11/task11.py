@@ -120,4 +120,16 @@ def task11_25350_12():  # 257
     for i in range(0, 30):
         if (l * i * c) / 8  <= mem / 8:
             print(i, 2**i+1)
-task11_25350_12()
+
+
+def task11_3364_13():  # 4000
+    c = 70
+    pc = 20
+    alph = 1050
+    i = 11
+    data = 32768
+    cw = ceil(c * i / 8)
+    pcw = ceil(pc * i / 8)
+    v = data * (cw+pcw)
+    print(ceil(v / 1024))
+task11_3364_13()

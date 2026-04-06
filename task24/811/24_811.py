@@ -1,0 +1,10 @@
+file = open('task24/811/24_811.txt').readline()
+print(file[:100])
+file = file.replace('XX', 'X *').replace('YY', 'Y *').replace('ZZ', 'Z *')
+print(file[:100])
+file = file.split()
+file.pop(0)
+file.pop(1)
+l = max([len(x) for x in file]) - 2  # Убираем начало и конец
+print(file[:100])
+print(l)

@@ -1,4 +1,6 @@
 from sys import setrecursionlimit, set_int_max_str_digits
+from math import log10
+from functools import lru_cache
 
 # this is my practise file of task number 16
 setrecursionlimit(1000000)
@@ -144,4 +146,15 @@ def task16_25355_15_G(n):
     if n < 248045:
         return task16_25355_15_G(n+9) - 4
 
-print(task16_25355_15_F(673))
+@lru_cache(None)
+def task16_7037_16(n):  # 55252
+    if n == 0:
+        return 0
+    if n > 0 and n % 10 == 0:
+        return task16_7037_16(n//10)
+    if n > 0 and n % 10 > 0 and int(log10(n)) % 2 == 0:
+        return task16_7037_16(n-1)-1
+    if n > 0 and n % 10 > 0 and int(log10(n)) % 2 != 0:
+        return task16_7037_16(n-1)+1
+
+

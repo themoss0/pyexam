@@ -159,4 +159,18 @@ def task15_egkr_16():
         if all(task15_egkr_16_F(a, x,78125 - 4 * x) for x in range(1,1000) for y in range(1,1000)):
             print(a)
             break
-task15_egkr_16()
+
+
+def t15_7086_f(n, m):
+    return n % m == 0
+
+def t15_7086_f1(b, A, x):
+    return t15_7086_f(x, A) or ((x in b) <= (not(t15_7086_f(x, 16))))
+
+
+def task15_7086_17():  # 64
+    b = [x for x in range(50, 71)]
+    for A in range(1, 1000):
+        if all(t15_7086_f1(b, A, x) for x in range(1, 1000)):
+            print(A)
+task15_7086_17()

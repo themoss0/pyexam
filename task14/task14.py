@@ -5,6 +5,8 @@ set_int_max_str_digits(10000)
 
 
 def sys(s: int, c: int) -> str:
+    if (s == 0):
+        return '0'
     res = ''
     while s > 0:
         res = str(s % c) + res
@@ -262,4 +264,14 @@ def task14_25353_26():  # 27
         if (k0 == 6):
             print(x)
             break
-task14_25353_26()
+
+
+def task14_252_27():
+    c1 = 79
+    c2 = 111
+    for n in range(6, 1000):
+        r1 = sys(c1, n)
+        r2 = sys(c2, n)
+        if (r1[-1] == '2' and r2[-1] == '1'):
+            print(n)
+task14_252_27()

@@ -114,4 +114,13 @@ def task23_25360_19(x, y):
     if x <= y or x == 36:
         return x == y
     return task23_25360_19(x-3, y) + task23_25360_19(x-6, y) + task23_25360_19(x//2, y)
-print(task23_25360_19(86, 53) * task23_25360_19(53, 12))
+
+
+def task23_4494_20(x, y):  # 31
+    if (x >= y): return x == y
+    return task23_4494_20(x+1, y) + task23_4494_20(x+2, y) + task23_4494_20(x+4, y)
+
+for i in range(1, 100000):
+    if task23_4494_20(15, i) == 4930:
+        print(i)
+        break
