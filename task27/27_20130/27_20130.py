@@ -4,8 +4,7 @@
 
 from math import dist
 
-fileA = open('27A_20130.txt')
-fileB = open('27B_20130.txt')
+
 
 
 data = []

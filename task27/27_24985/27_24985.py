@@ -9,12 +9,10 @@ fileA.readline()
 fileB.readline()
 
 data = []
-
 for line in fileB:
 	x, y = [float(k) for k in line.replace(',','.').split()]
 	data.append([x, y])
 print(len(data))
-print()
 
 
 clusters = []
@@ -25,6 +23,9 @@ while len(data) != 0:
 		clusters[-1].extend(neighbours)
 		for p1 in neighbours: data.remove(p1)
 	print(len(clusters[-1])) 
+# Если упомянуто, что нужно убрать "Аномалии" - это такие группы,
+# которые имеют всего одну точку. Например, когда она ОЧЕНЬ далеко
+# от остальных точек
 clusters = [cl for cl in clusters if len(cl) > 1]
 # Антицентр класстера - точка, имеющая максимальную сумму расстояний между точками
 def anti_centroid(cluster):

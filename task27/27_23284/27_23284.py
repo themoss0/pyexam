@@ -39,6 +39,7 @@ def max_distance_between_centroids():
 
 def min_distance_between_centroids():
 	return min(dist(centroids[i], centroids[j]) for i in range(len(centroids)-1) for j in range(i+1, len(centroids)))
+# Сумма абсцисс и ординат центров кластеров
 Px = sum(x for x, y in centroids) * 10000 // 1
 Py = sum(y for x, y in centroids) * 10000 // 1
 Q1 = abs(min_distance_between_centroids()) * 10000 // 1
