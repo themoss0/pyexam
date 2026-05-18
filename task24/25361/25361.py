@@ -1,4 +1,4 @@
-with open('24_25361.txt') as file:
+with open('task24\\25361\\24_25361.txt') as file:
     data_list = [x for x in file.readlines()]
 
 data = ''
