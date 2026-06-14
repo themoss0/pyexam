@@ -132,4 +132,14 @@ def task11_3364_13():  # 4000
     pcw = ceil(pc * i / 8)
     v = data * (cw+pcw)
     print(ceil(v / 1024))
-task11_3364_13()
+
+
+def task11_23749_14():
+    l = 2783
+    mem_bytes = 11 * 1024 * 1024 * 1024
+    c = 3_845_627
+    for i in range(1, 1000):
+        if i * l * c >= (mem_bytes * 8):
+             print(i, 2**i)
+             break
+task11_23749_14()

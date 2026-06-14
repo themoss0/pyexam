@@ -120,7 +120,13 @@ def task23_4494_20(x, y):  # 31
     if (x >= y): return x == y
     return task23_4494_20(x+1, y) + task23_4494_20(x+2, y) + task23_4494_20(x+4, y)
 
-for i in range(1, 100000):
-    if task23_4494_20(15, i) == 4930:
-        print(i)
-        break
+    # for i in range(1, 100000):
+    #     if task23_4494_20(15, i) == 4930:
+    #         print(i)
+    #         break
+
+def task23_23761_21(x, y): # 68
+    if x <= y or x == 7: return x==y
+    return task23_23761_21(x-1, y) + task23_23761_21(x-4, y) + task23_23761_21(x//3, y)
+
+    # print(task23_23761_21(19, 13) * task23_23761_21(13, 2))

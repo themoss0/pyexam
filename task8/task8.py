@@ -172,4 +172,13 @@ def task8_4538_14():  # 12600
             res.append(i)
     res = set(res)
     print(len(res))
-task8_4538_14()
+
+
+def task8_23746_15(): # 5058
+    n = 1
+    for w in map(''.join, product(sorted('СТРОКА'), repeat=5)):
+        if w[0] not in ['А', 'С', 'Т'] and w.count('О') == 2:
+            if n % 2 == 0:
+                print(n)
+        n += 1
+task8_23746_15()

@@ -7,6 +7,6 @@ for line in open('task9/23747/23747.txt'):
     p3 = [x for x in a if a.count(x) == 3]
     np = [x for x in a if a.count(x) == 1]
     if len(p3) > 0 and len(np) != 0 and sum(np) / len(np) <= p3[0]:
-        num.append({sum(a):i})
+        num.append((i, a, sum(a)))
     i+=1
 print(num[-1])

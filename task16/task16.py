@@ -146,7 +146,7 @@ def task16_25355_15_G(n):
     if n < 248045:
         return task16_25355_15_G(n+9) - 4
 
-@lru_cache(None)
+
 def task16_7037_16(n):  # 55252
     if n == 0:
         return 0
@@ -157,4 +157,19 @@ def task16_7037_16(n):  # 55252
     if n > 0 and n % 10 > 0 and int(log10(n)) % 2 != 0:
         return task16_7037_16(n-1)+1
 
+@lru_cache(100)
+def task16_23756_16_f(n):
+    return 2 * (task16_23756_16_g(n-3) + 8)
 
+@lru_cache(100)
+def task16_23756_16_g(n):
+    if n < 10: return 2*n
+    return task16_23756_16_g(n-2)+ 1
+
+for i in range(0, 15600):
+    task16_23756_16_g(i)
+
+for i in range(0, 15600):
+    task16_23756_16_f(i)
+
+print(task16_23756_16_f(15548))

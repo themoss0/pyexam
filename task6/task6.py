@@ -285,5 +285,24 @@ def task6_4810_13():
             goto(x*q, y*q)
             dot(3, 'red')
     done()
-    
-task6_4810_13()
+
+
+def task6_23743_14():  # 251
+    lt(90)
+    speed(5000)
+    k = 14
+
+    for _ in range(2):
+        fd(14*k), lt(270), back(12*k), rt(90)
+    up()
+    fd(9*k), rt(90), back(7*k), lt(90)
+    down()
+    for _ in range(2):
+        fd(13*k), rt(90), fd(6*k), rt(90)
+    up()
+    for x in range(0, -20, -1):
+        for y in range(0, 25):
+            goto(x*k, y*k)
+            dot(3, 'red')
+    done()
+task6_23743_14()

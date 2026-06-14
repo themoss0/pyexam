@@ -159,8 +159,22 @@ def task7_25346_16():  # 656
     print(mem / 8 / 1024 / 1024)
 
 
-def task7_14404_17():
-    size = 1024*768
-    mem = 540 * 1024 * 8
-    
-task7_14404_17()
+def task7_23744_17():  # 123937 (целая часть)
+    frame = 1024 * 768
+    i = 30  # 2^i цветов -> 2^30 => i = 30
+    updated_frame = 800*600
+    changed_i = 28
+    count = 100
+    size_before = frame * i
+    size_changed = updated_frame * changed_i
+    diff = count * (size_before - size_changed)
+    print(size_before, size_changed, diff)
+    print(diff / 8 / 1024)
+
+
+def task7_23745_18(): # 245
+    file_size_mb = 35 
+    # В условии сказано, что дискретизация в 3.5 раза больше, а каналы - в два (с моно на стерео) => 
+    # 35 = 1 * discr * t
+    # x  = 2 * 3.5 * discr * t
+    # x = 7 * discr * t => x = 7 * 35 = 245

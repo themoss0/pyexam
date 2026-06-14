@@ -294,4 +294,22 @@ def task2_20569_22():  # ('z', 'x', 'w', 'y')
             for p in permutations('wxyz', r=4):
                 if all(task2_20569_22_f(**dict(zip(p, line))) == line[-1] for line in t):
                     print(p, sep='')
-task2_20569_22()
+
+
+def task2_23739_23_f(w, x, y, z):
+    return (x or y) and (not(y == z)) and (not(w))
+
+
+def task2_23739_23(): # z y x w
+    for x1, x2, x3, x4 in product([0, 1], repeat=4):
+        t = (
+            (1, x1, 1, x2, 1),
+            (0, 1, x3, 0, 1),
+            (x4, 1, 1, 0, 1)
+        )
+        if len(t) == len(set(t)):
+            for p in permutations('wxyz', r=4):
+                if all(task2_23739_23_f(**dict(zip(p, line))) == line[-1] for line in t):
+                    print(*p)
+
+task2_23739_23()

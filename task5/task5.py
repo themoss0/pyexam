@@ -225,4 +225,14 @@ def task5_975_17():
             print(f'stop: {n=} ({r=})')
             break
         
-task5_975_17()
+def task5_23745_18():  # 26
+    for n in range(1, 1001):
+        b = bin(n)[2:]
+        if n % 3 == 0: b = b + b[-3:]
+        else: b = b + bin((n%3)*3)[2:]
+        r = int(b, 2)
+        print(f'{n}->{r}')
+        if r >= 200:
+            print(f'res:{n}->{r}')
+            break
+task5_23745_18()
